@@ -37,8 +37,6 @@ It is a library which is use for make a Api call.
 
 ## How to Setup Project
 
-_Steps to setup the project_
-
 **Step 1:** Clone this repository.
 
 **Step 2:** Go to the cloned repo and open in in termianl.
@@ -88,17 +86,6 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
 
    The linting rules are from JS Standard and React-Standard.  [Regular JS errors can be found with descriptions here](http://eslint.org/docs/rules/), while [React errors and descriptions can be found here](https://github.com/yannickcr/eslint-plugin-react).
 
-## Extra steps for android
-
-_Describe any extra steps which need to be taken fo the auto-generated android project. Eg. Some specific setup of any manifest file, some manual linking which is buggy and needs to be corrected for first checkout etc. Here is an example:_
-
-- Mind the version of google services used in the project. All google services must have same version. This is implemented using project level build.gradle.
-
-## Extra steps for ios
-
-_Describe any extra steps which need to be taken for the auto-generated ios project. Eg. Some specific setup of any certificates, pods, linking, information in Info.plist, some manual linking which is buggy and needs to be corrected for first checkout etc. Here is an example:_
-
-- You will need all the certificates to run the ios project in a real device.
 
 ## List of all dependencies used in the project with their usage
 
@@ -107,37 +94,4 @@ _List all dependencies from the package.json file along with their usage. This l
   1. [**@react-native-community/audio-toolkit**](https://github.com/react-native-community/react-native-audio-toolkit) to play and record audio files.
   1. [**react-native-circle-list**](https://github.com/mjinkens1/react-native-circle-list) to display friend list on the bottom of Home Screen.
 
-## Following accounts are used for the mentioned platform
-
-_Mention all the accounts used for various development and deployement platforms. Just email/username should be mentioned but never a password. Make sure this information stays in a private repository. If your repository is public, do not share this kind of private information via readme. Provide another private source. Like a private file on our zoho or a file in Microsoft Teams._
-
-**Codebeat**: abc@abc.com
-
-**Bitrise**: abc@abc.com
-
-**Google Play**: abc@abc.com
-
-**Apple Store and developer account**: abc@abc.com
-
-**Fabric**: abc@abc.com
-
-**Firebase/Google service**: abc@abc.com
-
-## Troubleshoot Notes
-
-_Provide troubleshoot guideline for any known issues. For example, a specific error for build proccess or deployement process or even an error in any third party dependency._
-
-_For example_
-- Application crashes in production because of react-native-maps. Follow this [link](https://github.com/react-native-community/react-native-maps/issues/2997) to fix it.
-
-_If there no known issues:_
-- There are no known issues for run or build processes right now.
-
-## Notes
-
-_Here any information which is important but not mentioned above and must be passed among all developers, should be mentioned. Like which branch is used for build releases, library deprecations etc._
-
-_For example_
-
-- Release builds are distributed from develop-release branch and all pull requests are done to develop branch.
 
