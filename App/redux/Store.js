@@ -6,7 +6,6 @@ import rootReducer from './index';
 const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 const middleWare = [sagaMiddleware];
-  
 
 // Add middleware to redux store
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -6,7 +6,7 @@ import { ApplicationStyles } from '../theme';
 const RootContainer = () => {
   return (
     <View style={[ApplicationStyles.screen.mainContainer]}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar translucent barStyle="dark-content" />
       <HomeScreen />
     </View>
   );

@@ -1,9 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 import { Colors, Fonts, scale, verticalScale } from '../../theme';
 
 const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
+    paddingTop: StatusBar.currentHeight,
     height: verticalScale(60),
     backgroundColor: Colors.primary,
     flexDirection: 'row',

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: Fonts.size.regular,
-    fontFamily: Fonts.type.bold,
+    fontFamily: Fonts.type.bold
   },
   model: {
     fontSize: Fonts.size.medium,
@@ -42,13 +42,13 @@ const styles = StyleSheet.create({
   },
   crew: {
     fontSize: Fonts.size.small,
-    fontFamily: Fonts.type.regular,
+    fontFamily: Fonts.type.regular
   },
   manuf: {
     fontSize: Fonts.size.small,
     fontFamily: Fonts.type.regular,
     color: Colors.primary
-  },
+  }
 });
 
 export default styles;
