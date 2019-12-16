@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { ApplicationStyles, Colors, verticalScale } from '../../../theme';
+import {
+  ApplicationStyles,
+  Colors,
+  verticalScale,
+  Fonts
+} from '../../../theme';
 
 const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
@@ -22,9 +27,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  floating: {
-    height: 24,
-    width: 24,
+  loaderContainer: {
+    padding: 15,
+    backgroundColor: Colors.content
+  },
+  loaderInnerContainer: {
+    flex: 1
+  },
+  searchContainer: {
+    width: '100%',
+    height: verticalScale(44),
+    paddingLeft: verticalScale(15),
+    paddingRight: verticalScale(15)
+  },
+  search: {
+    fontSize: Fonts.size.input,
+    fontFamily: Fonts.type.regular
+  },
+  close: {
+    color: Colors.primary,
+    fontSize: 28
+  },
+  noDataText: {
+    fontSize: Fonts.size.input,
+    fontFamily: Fonts.type.regular,
+    textAlign: 'center'
   }
 });
 

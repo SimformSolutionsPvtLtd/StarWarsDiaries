@@ -1,11 +1,4 @@
-import {
-  Colors,
-  Metrics,
-  // Fonts,
-  verticalScale,
-  // moderateScale,
-  scale
-} from './';
+import { Colors, Metrics, verticalScale } from './';
 
 // This file is for a reusable grouping of Theme items.
 // Similar to an XML fragment layout in Android
@@ -55,24 +48,6 @@ const ApplicationStyles = {
     },
     topRightBorderRadius: {
       borderTopRightRadius: Metrics.textFieldRadius
-    }
-  },
-  form: {
-    textInput: {
-      height: verticalScale(45),
-      width: scale(300),
-      borderRadius: scale(5),
-      borderWidth: scale(1),
-      borderColor: Colors.secondary,
-      paddingLeft: scale(10)
-    },
-    formContainer: {
-      alignItems: 'center',
-      padding: scale(10)
-    },
-    formInputs: {
-      marginTop: verticalScale(20),
-      alignItems: 'center'
     }
   }
 };

@@ -13,6 +13,7 @@ export default Creators;
 
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
+  haveMore: true,
   vehicles: [],
   fetching: false,
   error: null
@@ -33,7 +34,8 @@ export const successVehicleList = (state, action) => {
   return state.merge({
     fetching: false,
     error: false,
-    vehicles: state.vehicles.concat(data)
+    vehicles: state.vehicles.concat(data.results),
+    haveMore: data.next !== null
   });
 };
 

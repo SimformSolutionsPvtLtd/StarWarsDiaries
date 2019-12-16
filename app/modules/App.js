@@ -3,9 +3,8 @@ import { Provider } from 'react-redux';
 import '../config/ReactronConfig';
 import reduxStore from '../redux/Store';
 import RootContainer from './RootContainer';
-import { AppRegistry } from 'react-native';
 import { registerRootComponent } from 'expo';
-
+console.disableYellowBox = true;
 
 const App = () => {
   return (

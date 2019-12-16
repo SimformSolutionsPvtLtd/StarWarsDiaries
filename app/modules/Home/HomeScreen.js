@@ -1,15 +1,42 @@
-import { Container } from 'native-base';
+import _ from 'lodash';
+import { Button, Container, Icon, Input, Item, Text } from 'native-base';
+import PropTypes from 'prop-types';
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  Keyboard,
+  StyleSheet,
+  View
+} from 'react-native';
 import { connect } from 'react-redux';
+import { Strings } from '../../constants';
 import { CustomHeader, ItemLoader, VehicleListItem } from '../../components';
 import HomeAction from '../../redux/HomeRedux';
-import { Colors, Icons } from '../../theme';
+import { Colors } from '../../theme';
 import styles from './styles/HomeScreenStyle';
+
 class HomeScreen extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.page = 1;
+    this.state = {
+      vehicles: [],
+      filteredVehicles: [],
+      searchedText: ''
+    };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (!_.isEqual(props.vehicles, state.vehicles)) {
+      const newData = props.vehicles.filter(item => {
+        return item.name
+          .toLowerCase()
+          .includes(state.searchedText.toLowerCase());
+      });
+      return { vehicles: props.vehicles, filteredVehicles: newData };
+    }
+    return null;
   }
 
   componentDidMount() {
@@ -18,71 +45,102 @@ class HomeScreen extends React.Component {
 
   renderItem = ({ item }) => {
     const { fetching } = this.props;
-    return (
-      <VehicleListItem content={item} fetching={fetching} />
-    )
-  }
+    return <VehicleListItem content={item} fetching={fetching} />;
+  };
 
+  //load more vehicles - When user scroll down load more vehicles data.
   handleLoadMore = () => {
-    const { fetching, getAllVehicles } = this.props;
-    if (!fetching) {
+    const { fetching, getAllVehicles, haveMore } = this.props;
+    if (!fetching && haveMore) {
       this.page = this.page + 1;
       getAllVehicles(this.page);
     }
-  }
+  };
+
+  onSearchChange = text => {
+    const { vehicles } = this.state;
+    const newData = vehicles.filter(item => {
+      return item.name.toLowerCase().includes(text.toLowerCase());
+    });
+    this.setState({ filteredVehicles: [...newData], searchedText: text });
+  };
+
+  onCancelPress = () => {
+    Keyboard.dismiss();
+    this.setState({ searchedText: '', filteredVehicles: this.state.vehicles });
+  };
 
   renderFooter = () => {
-    if (!this.props.fetching) return null;
-    return (
-      <ActivityIndicator style={{ color: Colors.primary }} />
-    );
+    if (!this.props.fetching) {
+      return null;
+    }
+    return <ActivityIndicator style={{ color: Colors.primary }} />;
+  };
+
+  renderEmptyComponent = () => {
+    if (!this.props.fetching) {
+      return (
+        <View>
+          <Text style={styles.noDataText}>No Data</Text>
+        </View>
+      );
+    }
+    return null;
   };
 
   renderList() {
-    const { fetching, vehicles } = this.props;
+    const { filteredVehicles } = this.state;
     return (
       <FlatList
         style={styles.list}
-        keyExtractor={(item) => item.name}
+        keyExtractor={item => item.url}
         contentContainerStyle={styles.listContent}
-        data={vehicles}
+        data={filteredVehicles}
+        extraData={this.state}
         renderItem={this.renderItem}
+        ListEmptyComponent={this.renderEmptyComponent}
+        ListFooterComponent={this.renderFooter}
         onEndReachedThreshold={0.4}
         onEndReached={this.handleLoadMore}
-        ListFooterComponent={this.renderFooter}
       />
-    )
-  }
-
-  renderFloatingButton() {
-    return (
-      <TouchableOpacity style={styles.floatingButton} activeOpacity={0.7}>
-        <Image source={Icons.filter} style={styles.floating} />
-      </TouchableOpacity>
-    )
+    );
   }
 
   renderHeader() {
-    return (
-      <CustomHeader title={'Vehicles'} />
-    )
+    return <CustomHeader title={Strings.vehicles} />;
   }
 
+  renderSearchBar() {
+    return (
+      <View style={styles.searchContainer}>
+        <Item>
+          <Icon name="search" />
+          <Input
+            placeholder="Search Vehicles"
+            style={styles.search}
+            value={this.state.searchedText}
+            onChangeText={this.onSearchChange}
+          />
+          <Button transparent onPress={this.onCancelPress}>
+            <Icon name="close" style={styles.close} />
+          </Button>
+        </Item>
+      </View>
+    );
+  }
+
+  //show loader when api calling
   renderLoader() {
     if (this.props.fetching && this.page === 1) {
       return (
-        <View style={[StyleSheet.absoluteFill, { padding: 15, backgroundColor: Colors.content }]}>
-          <View style={{ flex: 1, backgroundColor: Colors.content }}>
-            <ItemLoader />
-            <ItemLoader />
-            <ItemLoader />
-            <ItemLoader />
-            <ItemLoader />
+        <View style={[StyleSheet.absoluteFill, styles.loaderContainer]}>
+          <View style={styles.loaderInnerContainer}>
+            {Array(6).fill(<ItemLoader />)}
           </View>
         </View>
-      )
+      );
     }
-    return null
+    return null;
   }
 
   render() {
@@ -90,27 +148,31 @@ class HomeScreen extends React.Component {
       <Container style={styles.mainContainer}>
         {this.renderHeader()}
         <View style={styles.mainContainer}>
+          {this.renderSearchBar()}
           {this.renderList()}
           {this.renderLoader()}
-          {this.renderFloatingButton()}
         </View>
       </Container>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   vehicles: state.home.vehicles,
   fetching: state.home.fetching,
-  error: state.home.error
-})
-
-const mapDispatchToProps = dispatch => ({
-  getAllVehicles: (page) => dispatch(HomeAction.vehicleRequest(page))
+  error: state.home.error,
+  haveMore: state.home.haveMore
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeScreen);
+const mapDispatchToProps = dispatch => ({
+  getAllVehicles: page => dispatch(HomeAction.vehicleRequest(page))
+});
 
+HomeScreen.propTypes = {
+  getAllVehicles: PropTypes.func,
+  fetching: PropTypes.bool,
+  vehicles: PropTypes.array,
+  haveMore: PropTypes.bool
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

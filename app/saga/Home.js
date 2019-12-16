@@ -4,9 +4,7 @@ import { getError } from '../services/Utils';
 
 function* handleResponse(response) {
   if (response?.count > 0) {
-    yield put(
-      HomeActions.vehicleSuccess(response.results)
-    );
+    yield put(HomeActions.vehicleSuccess(response));
   } else {
     const error = yield call(getError, response);
     yield put(HomeActions.vehicleFailure(error));

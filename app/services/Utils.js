@@ -8,7 +8,6 @@ export const apiConfig = baseURL =>
   });
 
 export async function getError(response) {
-  // if (response.problem === 'CLIENT_ERROR') return response.data.error;
   if (response?.problem === 'NETWORK_ERROR') {
     return 'Please check your internet connection';
   }

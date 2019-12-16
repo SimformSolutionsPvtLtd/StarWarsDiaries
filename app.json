@@ -9,7 +9,7 @@
       "android",
       "web"
     ],
-    "entryPoint": "./app/modules/App.js",
+    "entryPoint": "./App/modules/App.js",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -1,23 +1,29 @@
 import React from 'react';
 import ContentLoader, { Rect } from 'react-content-loader/native';
+import PropTypes from 'prop-types';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import styles from './styles/VehicleListItemStyles';
 
-const renderTextContainer = (props) => {
-  const { name, model, vehicle_class, manufacturer, cost_in_credits } = props.content;
+const renderTextContainer = content => {
+  const { name, model, vehicle_class, manufacturer, cost_in_credits } = content;
   return (
     <View style={styles.textContainer}>
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.model} numberOfLines={1}>{`Model: ${model}`}</Text>
-      <Text style={styles.manuf} numberOfLines={1}>{manufacturer}</Text>
-      <Text style={styles.manuf} numberOfLines={1}>{`Class: ${vehicle_class}`}</Text>
+      <Text style={styles.manuf} numberOfLines={1}>
+        {manufacturer}
+      </Text>
+      <Text
+        style={styles.manuf}
+        numberOfLines={1}
+      >{`Class: ${vehicle_class}`}</Text>
       <Text style={styles.crew}>{`Cost: ${cost_in_credits} $`}</Text>
     </View>
-  )
-}
+  );
+};
 
 const renderImageContainer = () => {
-  const imageUrl = 'https://source.unsplash.com/random/300x200/?car'
+  const imageUrl = 'https://source.unsplash.com/random/300x200/?car';
   const { imageContainer, container, image } = styles;
   return (
     <View style={imageContainer}>
@@ -32,16 +38,20 @@ const renderImageContainer = () => {
         style={image}
       />
     </View>
-  )
-}
+  );
+};
 
-const VehicleListItem = (props) => {
+const VehicleListItem = props => {
   return (
     <View style={styles.container}>
-      {renderTextContainer(props)}
+      {renderTextContainer(props.content)}
       {renderImageContainer()}
-    </View >
+    </View>
   );
-}
+};
+
+VehicleListItem.propTypes = {
+  content: PropTypes.object
+};
 
 export default VehicleListItem;

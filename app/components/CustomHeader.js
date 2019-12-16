@@ -49,19 +49,19 @@ const CustomHeader = ({
   titleStyle,
   headerStyle
 }) => (
-    <SafeAreaView
-      style={[styles.headerContainer, headerStyle]}
-      forceInset={{ bottom: 'never' }}
-    >
-      <View style={styles.iconView}>
-        {left && leftSection(leftIcon, leftIconStyle, leftOnPress)}
-      </View>
-      {center && centerSection(title, titleStyle)}
-      <View style={styles.iconView}>
-        {right && rightSection(rightIcon, rightIconStyle, rightOnPress)}
-      </View>
-    </SafeAreaView>
-  );
+  <SafeAreaView
+    style={[styles.headerContainer, headerStyle]}
+    forceInset={{ bottom: 'never' }}
+  >
+    <View style={styles.iconView}>
+      {left && leftSection(leftIcon, leftIconStyle, leftOnPress)}
+    </View>
+    {center && centerSection(title, titleStyle)}
+    <View style={styles.iconView}>
+      {right && rightSection(rightIcon, rightIconStyle, rightOnPress)}
+    </View>
+  </SafeAreaView>
+);
 
 CustomHeader.propTypes = {
   left: PropTypes.bool,
