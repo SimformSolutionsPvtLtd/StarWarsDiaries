@@ -31,7 +31,7 @@ A state management library used to manage data used by application.
 - [Redux Saga](https://redux-saga.js.org/)
 Redux-saga is a redux middleware library, which enables us to use redux asynchronously.
 
-- [Api Sause](https://github.com/infinitered/apisauce)
+- [Api Sauce](https://github.com/infinitered/apisauce)
 It is a library which is use for make a Api call.
 
 ## How to Setup Project
@@ -75,7 +75,20 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
 
 ## List of all dependencies used in the project with their usage
 
-  1. [**@react-native-community/audio-toolkit**](https://github.com/react-native-community/react-native-audio-toolkit) to play and record audio files.
-  1. [**react-native-circle-list**](https://github.com/mjinkens1/react-native-circle-list) to display friend list on the bottom of Home Screen.
+List all dependencies from the package.json file along with their usage. This list must be updated every time you change/add any dependecy. Here are some examples:
 
+- **Framework:**
+  - [React Native](https://github.com/facebook/react-native)
 
+- **State management libraries:** 
+  - [Redux](http://redux.js.org/), [React Redux](https://react-redux.js.org/), [Redux Persist](https://github.com/rt2zz/redux-persist), [Seamless-Immutable](https://github.com/rtfeldman/seamless-immutable)
+
+- **API & Middleware libraries:**
+  - [API Sauce](https://github.com/infinitered/apisauce), [Redux Sauce](https://github.com/jkeam/reduxsauce), [Redux Saga](https://redux-saga.js.org/)
+
+- **Libraries used for navigation:**
+  - [react-navigation](https://github.com/react-navigation/react-navigation), [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler), [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated), [react-navigation-redux-helpers](https://github.com/react-navigation/redux-helpers), [react-navigation-stack](https://github.com/react-navigation/stack)
+  
+- **Libraries used for UI:**
+  - [native-base](https://nativebase.io/),[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker)
+  
