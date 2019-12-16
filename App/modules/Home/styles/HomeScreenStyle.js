@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   searchContainer: {
     width: '100%',
-    height: verticalScale(44),
+    height: verticalScale(50),
     paddingLeft: verticalScale(15),
     paddingRight: verticalScale(15)
   },

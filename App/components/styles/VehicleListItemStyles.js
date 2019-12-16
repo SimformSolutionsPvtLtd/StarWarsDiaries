@@ -5,17 +5,11 @@ const styles = StyleSheet.create({
   container: {
     height: verticalScale(150),
     backgroundColor: Colors.white,
-    marginBottom: verticalScale(15),
+    marginBottom: verticalScale(12),
     borderRadius: 6,
     padding: verticalScale(12),
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    shadowOffset: {
-      width: 0,
-      height: 3
-    },
-    shadowRadius: 6,
-    shadowOpacity: 0.1
+    justifyContent: 'space-between'
   },
   textContainer: {
     flex: 1,

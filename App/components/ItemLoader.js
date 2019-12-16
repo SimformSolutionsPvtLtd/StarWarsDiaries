@@ -4,6 +4,11 @@ import { View } from 'react-native';
 import { verticalScale, Metrics } from '../theme';
 import styles from './styles/ItemLoaderStyles';
 
+/**
+ *Placeholder item for loading state
+ *
+ * @returns item loader component like facebook loading
+ */
 const ItemLoader = () => {
   const textWidth = `${verticalScale(Metrics.screenWidth - 180)}`;
   const textX = `${verticalScale(15)}`;

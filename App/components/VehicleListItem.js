@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Images } from '../assets';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import styles from './styles/VehicleListItemStyles';
+import { Card } from 'native-base';
 
 const renderTextContainer = content => {
   const { name, model, vehicle_class, manufacturer, cost_in_credits } = content;
@@ -39,12 +40,18 @@ const renderImageContainer = () => {
   );
 };
 
+/**
+ * Vehicle list item component to display vehicles data
+ *
+ * @param {*} props
+ * @returns Vehicle list item
+ */
 const VehicleListItem = props => {
   return (
-    <View style={styles.container}>
+    <Card style={styles.container}>
       {renderTextContainer(props.content)}
       {renderImageContainer()}
-    </View>
+    </Card>
   );
 };
 

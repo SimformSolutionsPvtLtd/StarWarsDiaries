@@ -10,12 +10,18 @@ import {
   View
 } from 'react-native';
 import { connect } from 'react-redux';
-import { Strings } from '../../constants';
 import { CustomHeader, ItemLoader, VehicleListItem } from '../../components';
+import { Strings } from '../../constants';
 import HomeAction from '../../redux/HomeRedux';
 import { Colors } from '../../theme';
 import styles from './styles/HomeScreenStyle';
 
+/**
+ * Home screen for display Vehicle list from Swap.co API.
+ *
+ * @class HomeScreen
+ * @extends {React.Component}
+ */
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +54,11 @@ class HomeScreen extends React.Component {
     return <VehicleListItem content={item} fetching={fetching} />;
   };
 
-  //load more vehicles - When user scroll down load more vehicles data.
+  /**
+   * Load more vehicles - When user scroll down load more vehicles data.
+   *
+   * @memberof HomeScreen
+   */
   handleLoadMore = () => {
     const { fetching, getAllVehicles, haveMore } = this.props;
     if (!fetching && haveMore) {
@@ -121,15 +131,16 @@ class HomeScreen extends React.Component {
             value={this.state.searchedText}
             onChangeText={this.onSearchChange}
           />
-          <Button transparent onPress={this.onCancelPress}>
-            <Icon name="close" style={styles.close} />
-          </Button>
+          {this.state.searchedText !== '' && (
+            <Button transparent onPress={this.onCancelPress}>
+              <Icon name="close" style={styles.close} />
+            </Button>
+          )}
         </Item>
       </View>
     );
   }
 
-  //show loader when api calling
   renderLoader() {
     if (this.props.fetching && this.page === 1) {
       return (
