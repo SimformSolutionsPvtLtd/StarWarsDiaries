@@ -37,7 +37,7 @@ _Steps to run the project in ios and andorid_
 1. Running the app over snack.expo.io
   * Press the 'Run' over the snack.expo.io and play the app in ios or android. Follow the steps over there to run the app in your mobile device.
 
-2. Run and build for either OS using expo cli
+2. Run and build for either OS using expo cli and Mac OS
     * Go to the project directory inside the terminal.
     * Run npm script ```$ yarn run ios ``` to run in iOS.
     * Run npm script ```$ yarn run android ``` to run in android.
@@ -67,11 +67,11 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
   - [React Native](https://github.com/facebook/react-native)
 
 - **State management libraries:** 
-  - [Redux](http://redux.js.org/), [React Redux](https://react-redux.js.org/), [Redux Persist](https://github.com/rt2zz/redux-persist), [Seamless-Immutable](https://github.com/rtfeldman/seamless-immutable)
+  - [Redux](http://redux.js.org/), [React Redux](https://react-redux.js.org/), [Redux Persist](https://github.com/rt2zz/redux-persist), [Seamless-Immutable](https://github.com/rtfeldman/seamless-immutable), [Redux Sauce](https://github.com/jkeam/reduxsauce),
 
 - **API & Middleware libraries:**
-  - [API Sauce](https://github.com/infinitered/apisauce), [Redux Sauce](https://github.com/jkeam/reduxsauce), [Redux Saga](https://redux-saga.js.org/)
+  - [API Sauce](https://github.com/infinitered/apisauce), [Redux Saga](https://redux-saga.js.org/)
   
 - **Libraries used for UI:**
-  - [native-base](https://nativebase.io/),[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker)
+  - [native-base](https://nativebase.io/)
   
