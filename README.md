@@ -39,8 +39,8 @@ _Steps to run the project in ios and andorid_
 
 2. Run and build for either OS using expo cli
     * Go to the project directory inside the terminal.
-    * Run npm script ```bash yarn run ios ``` to run in iOS.
-    * Run npm script ```bash yarn run android ``` to run in android.
+    * Run npm script ```$ yarn run ios ``` to run in iOS.
+    * Run npm script ```$ yarn run android ``` to run in android.
 
 ## Coding Style used
 
