@@ -24,21 +24,23 @@ expo cli
 
 **Step 1:** Clone this repository.
 
-**Step 2:** Go to the cloned repo and open in in termianl.
+**Step 2:** Go to the cloned repo and open it in termianl.
 
 **Step 3:** Install the application dependencies with `$ yarn`
 
-**Step 4:** Run the npm script to install the cocoapods `$ npm podinstall`
-
-**Step 5:** Run Jetify for Third Party library convert in AndroidX `npx jetify`(This needs to be done only for first time after checking out the repo. And for all projects having react-native 0.60 onwards)
+**Step 4:** Run the npm script to install the cocoapods `$ yarn run podinstall`
 
 ## How to Run the Project
 
 _Steps to run the project in ios and andorid_
 
-1. cd to the project directory
-2. Run and build for either OS
-    * Press the 'Run' over the snack.expo.io and play the app in ios or android. Follow the steps over there to run the app in your mobile device.
+1. Running the app over snack.expo.io
+  * Press the 'Run' over the snack.expo.io and play the app in ios or android. Follow the steps over there to run the app in your mobile device.
+
+2. Run and build for either OS using expo cli
+    * Go to the project directory inside the terminal.
+    * Run npm script ```bash yarn run ios ``` to run in iOS.
+    * Run npm script ```bash yarn run android ``` to run in android.
 
 ## Coding Style used
 
@@ -48,7 +50,7 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
   
    Use the npm script `lint`. To run it
   ```bash 
-    npm run lint
+    yarn run lint
   ```
 2. **Auto Lint on Commit**
    
@@ -61,8 +63,6 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
 
 ## List of all dependencies used in the project with their usage
 
-List all dependencies from the package.json file along with their usage. This list must be updated every time you change/add any dependecy. Here are some examples:
-
 - **Framework:**
   - [React Native](https://github.com/facebook/react-native)
 
@@ -71,9 +71,6 @@ List all dependencies from the package.json file along with their usage. This li
 
 - **API & Middleware libraries:**
   - [API Sauce](https://github.com/infinitered/apisauce), [Redux Sauce](https://github.com/jkeam/reduxsauce), [Redux Saga](https://redux-saga.js.org/)
-
-- **Libraries used for navigation:**
-  - [react-navigation](https://github.com/react-navigation/react-navigation), [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler), [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated), [react-navigation-redux-helpers](https://github.com/react-navigation/redux-helpers), [react-navigation-stack](https://github.com/react-navigation/stack)
   
 - **Libraries used for UI:**
   - [native-base](https://nativebase.io/),[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker)
