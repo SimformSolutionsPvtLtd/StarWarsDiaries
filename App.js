@@ -1,11 +1,10 @@
+import { AppLoading, registerRootComponent } from 'expo';
+import * as Font from 'expo-font';
 import React from 'react';
 import { Provider } from 'react-redux';
 import './App/config/ReactronConfig';
-import reduxStore from './App/redux/Store';
 import RootContainer from './App/modules/RootContainer';
-import { registerRootComponent } from 'expo';
-import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
+import reduxStore from './App/redux/Store';
 
 console.disableYellowBox = true;
 class App extends React.Component {

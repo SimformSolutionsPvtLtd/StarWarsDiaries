@@ -9,6 +9,16 @@
     "lint": "eslint App",
     "fixcode": "eslint --fix  ./App"
   },
+  "lint-staged": {
+    "App/**/*.js": [
+      "npm run fixcode"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "apisauce": "^1.1.1",
     "expo": "~36.0.0",
@@ -43,6 +53,8 @@
     "babel-preset-expo": "~8.0.0",
     "eslint": "^6.7.2",
     "eslint-config-universe": "^2.1.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1"
   },
   "private": true
