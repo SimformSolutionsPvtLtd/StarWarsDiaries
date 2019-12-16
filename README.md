@@ -20,27 +20,13 @@ expo cli
 
 **Editors** : Visual Studio Code/snack.expo.io
 
-## Main technologies used
-
-- [React Native](https://github.com/facebook/react-native)
-A framework for building native apps with React.
-
-- [Redux](http://redux.js.org/)
-A state management library used to manage data used by application.
-
-- [Redux Saga](https://redux-saga.js.org/)
-Redux-saga is a redux middleware library, which enables us to use redux asynchronously.
-
-- [Api Sauce](https://github.com/infinitered/apisauce)
-It is a library which is use for make a Api call.
-
 ## How to Setup Project
 
 **Step 1:** Clone this repository.
 
 **Step 2:** Go to the cloned repo and open in in termianl.
 
-**Step 3:** Install the Application with `$ npm i`
+**Step 3:** Install the application dependencies with `$ yarn`
 
 **Step 4:** Run the npm script to install the cocoapods `$ npm podinstall`
 
