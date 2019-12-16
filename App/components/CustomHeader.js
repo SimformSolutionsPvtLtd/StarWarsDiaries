@@ -35,6 +35,25 @@ const rightSection = (rightIcon, rightIconStyle, rightOnPress) => (
   </TouchableOpacity>
 );
 
+/**
+ * Custom header component
+ *
+ * @param {*} {
+ *   title = 'Header',
+ *   left = false,
+ *   center = true,
+ *   right = false,
+ *   leftIcon,
+ *   rightIcon,
+ *   leftOnPress,
+ *   rightOnPress,
+ *   rightIconStyle,
+ *   leftIconStyle,
+ *   titleStyle,
+ *   headerStyle
+ * }
+ * @returns Header component with left and right view
+ */
 const CustomHeader = ({
   title = 'Header',
   left = false,

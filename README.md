@@ -8,7 +8,7 @@ The repository for StarwarDiaries.
 [![react-native](https://img.shields.io/badge/react--native-61.0.4-brightgreen)](https://facebook.github.io/react-native/docs/0.59/getting-started)
 [![code-style](https://img.shields.io/badge/code--style-eslint%3Arecommended-brightgreen)](https://eslint.org/docs/rules/)
 [![code-style](https://img.shields.io/badge/code--style-react%2Frecommended-brightgreen)](https://github.com/yannickcr/eslint-plugin-react#recommended)
-
+[![codebeat badge](https://codebeat.co/badges/9a6500ed-59e4-453d-a5e6-50c4fc27ba5b)](https://codebeat.co/a/developer-0209bfcf-9e1a-4b86-a052-d18287f88f7c/projects/github-com-simformsolutions-starwarsdiaries-master)
 ---
 
 ##  Project Desctiption
@@ -28,7 +28,7 @@ expo cli
 
 **Step 3:** Install the application dependencies with `$ yarn`
 
-**Step 4:** Run the npm script to install the cocoapods `$ yarn run podinstall`
+**Step 4:** Run the npm script to install the cocoapods `$ yarn run pod install`
 
 ## How to Run the Project
 
@@ -70,5 +70,8 @@ This project adheres to JavaScript Standard for codinng style. To maintain codin
   - [API Sauce](https://github.com/infinitered/apisauce), [Redux Saga](https://redux-saga.js.org/)
   
 - **Libraries used for UI:**
-  - [native-base](https://nativebase.io/)
+  - [native-base](https://nativebase.io/), [expo-font](https://github.com/expo/expo), 
+
+- **Utilities libraries**
+  - [lodash](https://github.com/lodash/lodash)
   

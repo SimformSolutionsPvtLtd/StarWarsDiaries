@@ -7,6 +7,10 @@ import { getVehicles } from './Home';
 // to the sagas which need it.
 const apiHome = API.home();
 
+/**
+ * Watcher saga
+ * All the sagas are passed to all() to run them all in parallel
+ */
 export default function* rootSaga() {
   yield all([takeLatest(HomeTypes.VEHICLE_REQUEST, getVehicles, apiHome)]);
 }
