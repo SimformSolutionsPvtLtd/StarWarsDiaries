@@ -1,6 +1,7 @@
 import React from 'react';
 import ContentLoader, { Rect } from 'react-content-loader/native';
 import PropTypes from 'prop-types';
+import { Images } from '../assets';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import styles from './styles/VehicleListItemStyles';
 
@@ -23,7 +24,8 @@ const renderTextContainer = content => {
 };
 
 const renderImageContainer = () => {
-  const imageUrl = 'https://source.unsplash.com/random/300x200/?car';
+  const random = Math.floor(Math.random() * 11 + 1);
+  const imageName = `sw${random}`;
   const { imageContainer, container, image } = styles;
   return (
     <View style={imageContainer}>
@@ -32,11 +34,7 @@ const renderImageContainer = () => {
           <Rect x="0" y="0" rx="4" ry="4" width={'100%'} height="100%" />
         </ContentLoader>
       </View>
-      <Image
-        source={{ uri: imageUrl, cache: 'reload' }}
-        resizeMode={'cover'}
-        style={image}
-      />
+      <Image source={Images[imageName]} resizeMode={'cover'} style={image} />
     </View>
   );
 };
