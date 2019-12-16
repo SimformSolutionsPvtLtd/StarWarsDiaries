@@ -34,10 +34,7 @@ expo cli
 
 _Steps to run the project in ios and andorid_
 
-1. Running the app over snack.expo.io
-  * Press the 'Run' over the snack.expo.io and play the app in ios or android. Follow the steps over there to run the app in your mobile device.
-
-2. Run and build for either OS using expo cli and Mac OS
+1. Run and build for either OS using expo cli and Mac OS
     * Go to the project directory inside the terminal.
     * Run npm script ```$ yarn run ios ``` to run in iOS.
     * Run npm script ```$ yarn run android ``` to run in android.
